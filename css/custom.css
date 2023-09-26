@@ -1,0 +1,145 @@
+html, body {
+  background-color: #eee;
+  font-size: 2vw;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.5vh;
+  height: 100%;
+  overflow: hidden;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 2px solid black;
+  background-color: #cecece;
+}
+
+#header h1, #header p {
+  padding: .5vh 2vw;
+}
+
+#header p {
+  color: #333;
+}
+
+#header small {
+  font-size: 1.3vh;
+  font-weight: bold;
+  padding: .3vh 2vw;
+  margin-bottom: 1vh;
+}
+
+#game-area, #highest-number-area, #operator-select-area {
+  margin: 5vh auto;
+  width: 50%;
+  text-align: center;
+  border: 2px solid black;
+}
+
+#game-area {
+  text-align: center;
+  background-color: #eee;
+}
+
+#game-area h2 {
+  width: 100%;
+  padding: 2vh 10vw;
+  border-bottom: 2px solid black;
+}
+
+#game-area p {
+  font-size: 3vh;
+  padding: 2.5vh 10vw;
+  justify-content: center;
+}
+
+#game-area #first-number, #game-area #second-number {
+  border: 1px solid black;
+  padding: .25vh 1vw;
+}
+
+#game-area input {
+  width: 10vw;
+  padding: 2vh;
+  margin-bottom: 2.5vh;
+  text-align: center;
+}
+
+#game-area input::placeholder {
+  text-align: center;
+}
+
+#highest-number-area {
+  background-color: #eee;
+}
+
+#highest-number-area h3 {
+  padding: 1.5vh 2vw;
+  font-size: 1.5vh;
+}
+
+#highest-number {
+  padding: 1.5vh;
+  margin-bottom: 2vh;
+  width: 10vw;
+  text-align: center;
+}
+
+#operator-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 2vh 2vw;
+}
+
+#operator-list > li {
+  padding: 1vh 1vw;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#footer {
+  background-color: #cecece;
+  position: fixed;
+  bottom: 0;
+  border-top: 2px solid black;
+  text-align: center;
+  width: 100%;
+}
+
+#score-area {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2vh 0;
+}
+
+#score-area p {
+  margin: auto;
+}
+
+/* media queries */
+@media (max-width: 1200px) {
+  html, body{
+    font-size: 2.5vw;
+  }
+}
+
+/**** Hide input box arrows ****/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
