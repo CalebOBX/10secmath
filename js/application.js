@@ -11,7 +11,12 @@ let pickNumber = function(min, max) {
 
 // get labels with selected class and add to array, return the array of values of the for attribute
 let pickOperator = function() {
-  let selectedLabels = $('label[class="selected"');
+  let selectedLabels = $('label[class="selected"]');
+  if (selectedLabels.length === 0) {
+    alert("You must have at least one operator selected.");
+    $('label[for="addition"').toggleClass('selected');
+    selectedLabels = $('label[class="selected"]');
+  }
   let operatorsArray = [];
   $.each(selectedLabels, function(index, element) {
     operatorsArray.push(element.htmlFor);
@@ -117,6 +122,7 @@ newQuestion();
 $(document).ready(function() {
   $('.operator-selector').click(function() {
     $('label[for="'+ $(this).prop('id') +'"]').toggleClass('selected');
+    newQuestion();
   });
 
   $('#highest-number').on('keyup', function() {

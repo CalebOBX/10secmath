@@ -20,7 +20,7 @@ html, body {
   flex-direction: column;
   width: 100%;
   border-bottom: 2px solid black;
-  background-color: #cecece;
+  background-color: #dcdcdc;
 }
 
 #header h1, #header p {
@@ -56,19 +56,18 @@ html, body {
   width: 50%;
   text-align: center;
   border: 2px solid black;
+  background-color: #e5e4e2;
   box-shadow: #333 .5rem .5rem;
 }
 
-#game-area {
-  text-align: center;
-  background-color: #eee;
+h2, h3, h4 {
+  border-bottom: 2px solid black;
 }
 
 #game-area h2 {
   font-size: 3rem;
   width: 100%;
   padding: 2vh 10vw;
-  border-bottom: 2px solid black;
 }
 
 #game-area p {
@@ -97,10 +96,6 @@ input {
   text-align: center;
 }
 
-#highest-number-area {
-  background-color: #eee;
-}
-
 #highest-number-area h3 {
   padding: 1.5vh 2vw;
   font-size: 1.5rem;
@@ -108,13 +103,13 @@ input {
 
 #highest-number {
   padding: 1.5vh;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   width: 10vw;
   text-align: center;
 }
 
 #operator-select-area h4 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 1.3vh 0;
 }
 
@@ -138,7 +133,7 @@ input {
 }
 
 #footer {
-  background-color: #cecece;
+  background-color: #dcdcdc;
   border-top: 2px solid black;
   text-align: center;
   width: 100%;
