@@ -120,6 +120,7 @@ let startGame = function() {
 newQuestion();
 
 $(document).ready(function() {
+  // toggle operator label background
   $('.operator-selector').click(function() {
     $('label[for="'+ $(this).prop('id') +'"]').toggleClass('selected');
     newQuestion();
@@ -127,7 +128,7 @@ $(document).ready(function() {
 
   $('#highest-number').on('keyup', function() {
     highestNumber = Number($(this).val());
-    // numbers must be 1 or greater
+    // numbers must be between 1 and 10000
     if (this.value < 1 || this.value > 10000) {
       alert('Numbers between 0 and 10000 only!');
       highestNumber = 10;
