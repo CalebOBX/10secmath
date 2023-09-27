@@ -130,7 +130,7 @@ $(document).ready(function() {
     highestNumber = Number($(this).val());
     // numbers must be between 1 and 10000
     if (this.value < 1 || this.value > 10000) {
-      alert('Numbers between 0 and 10000 only!');
+      alert('Numbers between 1 and 10000 only!');
       highestNumber = 10;
       $('#highest-number').val(10);
     }
