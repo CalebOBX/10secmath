@@ -128,8 +128,8 @@ $(document).ready(function() {
   $('#highest-number').on('keyup', function() {
     highestNumber = Number($(this).val());
     // numbers must be 1 or greater
-    if(!(/^(?!0(\.0*)?$)\d+(\.?\d{0,2})?$/).test(this.value)) {
-      alert('Numbers over zero only!');
+    if (this.value < 1 || this.value > 10000) {
+      alert('Numbers between 0 and 10000 only!');
       highestNumber = 10;
       $('#highest-number').val(10);
     }
