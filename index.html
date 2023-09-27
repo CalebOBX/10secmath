@@ -26,16 +26,24 @@
         <input id="answer" type="number" placeholder="0" />
       </div>
       <div id="highest-number-area">
-        <h3>How high do you want to go?</h3>
+        <h3>Highest number. How smart are you?</h3>
         <input id="highest-number" type="number" placeholder="10" min="1" />
       </div>
       <div id="operator-select-area">
-        <ul id="operator-list">
-          <li id="addition"><i class="fa-solid fa-plus"></i></li>
-          <li id="subtraction"><i class="fa-solid fa-minus"></i></li>
-          <li id="multiplication"><i class="fa-solid fa-xmark"></i></li>
-          <li id="division"><i class="fa-solid fa-divide"></i></li>
-        </ul>
+        <h4>Toggle operators</h4>
+        <form id="operator-select-form">
+          <input type="checkbox" id="addition" class="operator-selector" />
+          <label for="addition">+</label>
+
+          <input type="checkbox" id="subtraction" class="operator-selector" />
+          <label for="subtraction"><i class="fa-solid fa-minus"></i></label>
+
+          <input type="checkbox" id="multiplication" class="operator-selector" />
+          <label for="multiplication"><i class="fa-solid fa-xmark"></i></label>
+
+          <input type="checkbox" id="division" class="operator-selector" />
+          <label for="division"><i class="fa-solid fa-divide"></i></label>
+        </form>
       </div>
     </div>
     <div id="footer">

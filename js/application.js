@@ -10,6 +10,8 @@ let pickNumber = function(min, max) {
 }
 
 let pickOperator = function() {
+  let potentialOperators = ['+', '-', '*', '/'];
+  let selectedOperators = $('.selected');
   let operators = ['+', '-', '*', '/'];
   let operatorNum = pickNumber(0, 4);
   return operators[operatorNum];
@@ -112,8 +114,12 @@ $(document).ready(function() {
 
   $('#question').text(currentQuestion.equation);
 
-  $('#answer').on('keyup', function() {
+  $('#answer').keyup(function() {
     startGame();
     evaluateAnswer(Number($(this).val()), Number(currentQuestion.answer));
+  });
+
+  $('.operator-selector').click(function() {
+    $('label[for="'+ $(this).attr('id') +'"]').toggleClass('selected')
   });
 });

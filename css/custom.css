@@ -82,7 +82,7 @@ html, body {
 
 #highest-number-area h3 {
   padding: 1.5vh 2vw;
-  font-size: 1.5vh;
+  font-size: 1.5vw;
 }
 
 #highest-number {
@@ -92,17 +92,28 @@ html, body {
   text-align: center;
 }
 
-#operator-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 2vh 2vw;
+#operator-select-area h4 {
+  font-size: 1vw;
+  padding: 1.3vh 0;
 }
 
-#operator-list > li {
+#operator-select-form {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5vh 1.5vw;
+}
+
+.operator-selector, .operator-selector:checked {
+  display: none;
+}
+
+#operator-select-form > label {
   padding: 1vh 1vw;
   border: 1px solid black;
-  margin: auto;
+}
+
+.selected {
+  background-color: #cecece;;
 }
 
 #footer {
