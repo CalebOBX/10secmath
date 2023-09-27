@@ -9,27 +9,37 @@ let pickNumber = function(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+// get labels with selected class and add to array, return the array of values of the for attribute
 let pickOperator = function() {
-  let potentialOperators = ['+', '-', '*', '/'];
-  let selectedOperators = $('.selected');
-  let operators = ['+', '-', '*', '/'];
-  let operatorNum = pickNumber(0, 4);
-  return operators[operatorNum];
+  let selectedLabels = $('label[class="selected"');
+  let operatorsArray = [];
+  $.each(selectedLabels, function(index, element) {
+    operatorsArray.push(element.htmlFor);
+  })
+  return operatorsArray;
 }
 
 let questionMaker = function() {
   let question = {};
   let firstNumber = pickNumber(1, highestNumber);
   let secondNumber = pickNumber(1, highestNumber);
-  let operator = pickOperator();
+  let operators = pickOperator();
+  let operator = operators[pickNumber(0, operators.length)]
+  let operatorSymbol;
+
+  // check for this in case any know-it-alls try injecting a zero through console
   if (highestNumber <= 0) {
     alert("We're not playing anymore if you're trying to divide by zero. That's how wars start.");
     return false;
   }
-  if (operator === "+") {
+
+  if (operator === 'addition') {
+    operatorSymbol = '+';
     question.answer = firstNumber + secondNumber;
   }
-  else if (operator === '-') {
+  else if (operator === 'subtraction') {
+    operatorSymbol = '-';
+    // don't allow a negative value with subtraction
     if(firstNumber - secondNumber < 0) {
       let placeholder = secondNumber;
       secondNumber = firstNumber;
@@ -37,14 +47,17 @@ let questionMaker = function() {
     }
     question.answer = firstNumber - secondNumber;
   }
-  else if (operator === '*') {
+  else if (operator === 'multiplication') {
+    operatorSymbol = '*';
     question.answer = firstNumber * secondNumber;
   }
-  else if (operator === '/' && highestNumber !== 0) {
+  else if (operator === 'division' && highestNumber !== 0) {
+    operatorSymbol = '/';
     // just go to two decimals
     question.answer = (firstNumber / secondNumber).toFixed(2);
   }
-  question.equation = String(firstNumber) + " " + String(operator) + " " + String(secondNumber);
+
+  question.equation = String(firstNumber) + " " + String(operatorSymbol) + " " + String(secondNumber);
   return question;
 }
 
@@ -98,9 +111,14 @@ let startGame = function() {
   }
 }
 
+// get a question for first page load
 newQuestion();
 
 $(document).ready(function() {
+  $('.operator-selector').click(function() {
+    $('label[for="'+ $(this).prop('id') +'"]').toggleClass('selected');
+  });
+
   $('#highest-number').on('keyup', function() {
     highestNumber = Number($(this).val());
     // numbers must be 1 or greater
@@ -117,9 +135,5 @@ $(document).ready(function() {
   $('#answer').keyup(function() {
     startGame();
     evaluateAnswer(Number($(this).val()), Number(currentQuestion.answer));
-  });
-
-  $('.operator-selector').click(function() {
-    $('label[for="'+ $(this).attr('id') +'"]').toggleClass('selected')
   });
 });

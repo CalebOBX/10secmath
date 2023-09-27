@@ -20,36 +20,38 @@
         <p>Answer correctly before time runs out. Correct answers add a second to the clock.</p>
         <small>Answers go to two decimals.</small>
       </div>
-      <div id="game-area">
-        <h2><span id="seconds-left">10</span> seconds left.</h2>
-        <p id="question"></p>
-        <input id="answer" type="number" placeholder="0" />
-      </div>
-      <div id="highest-number-area">
-        <h3>Highest number. How smart are you?</h3>
-        <input id="highest-number" type="number" placeholder="10" min="1" />
-      </div>
-      <div id="operator-select-area">
-        <h4>Toggle operators</h4>
-        <form id="operator-select-form">
-          <input type="checkbox" id="addition" class="operator-selector" />
-          <label for="addition">+</label>
+      <div id="main">
+        <div id="game-area">
+          <h2><span id="seconds-left">10</span> seconds left.</h2>
+          <p id="question"></p>
+          <input id="answer" type="number" placeholder="0" />
+        </div>
+        <div id="highest-number-area">
+          <h3>Highest number to use. How smart are you?</h3>
+          <input id="highest-number" type="number" placeholder="10" min="1" />
+        </div>
+        <div id="operator-select-area">
+          <h4>Toggle operators for next question</h4>
+          <form id="operator-select-form">
+            <input type="checkbox" id="addition" class="operator-selector" checked />
+            <label for="addition" class="selected"><i class="fa-solid fa-plus"></i></label>
 
-          <input type="checkbox" id="subtraction" class="operator-selector" />
-          <label for="subtraction"><i class="fa-solid fa-minus"></i></label>
+            <input type="checkbox" id="subtraction" class="operator-selector" />
+            <label for="subtraction"><i class="fa-solid fa-minus"></i></label>
 
-          <input type="checkbox" id="multiplication" class="operator-selector" />
-          <label for="multiplication"><i class="fa-solid fa-xmark"></i></label>
+            <input type="checkbox" id="multiplication" class="operator-selector" />
+            <label for="multiplication"><i class="fa-solid fa-xmark"></i></label>
 
-          <input type="checkbox" id="division" class="operator-selector" />
-          <label for="division"><i class="fa-solid fa-divide"></i></label>
-        </form>
+            <input type="checkbox" id="division" class="operator-selector" />
+            <label for="division"><i class="fa-solid fa-divide"></i></label>
+          </form>
+        </div>
       </div>
-    </div>
-    <div id="footer">
-      <div id="score-area">
-        <p>High Score: <span id="high-score">0</span></p>
-        <p>Current Score: <span id="current-score">0</span></p>
+      <div id="footer">
+        <div id="score-area">
+          <p>High Score: <span id="high-score">0</span></p>
+          <p>Current Score: <span id="current-score">0</span></p>
+        </div>
       </div>
     </div>
 

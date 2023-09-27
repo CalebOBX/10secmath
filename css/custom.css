@@ -1,16 +1,18 @@
 html, body {
   background-color: #eee;
-  font-size: 2vw;
+  font-size: 1vh;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   line-height: 1.5vh;
   height: 100%;
-  overflow: hidden;
+  width: 100%;
+  display: flex;
 }
 
 #wrap {
   width: 100%;
-  height: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-flow: column;
 }
 
 #header {
@@ -25,15 +27,28 @@ html, body {
   padding: .5vh 2vw;
 }
 
+#header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 #header p {
+  font-size: 1.5rem;
   color: #333;
 }
 
 #header small {
-  font-size: 1.3vh;
-  font-weight: bold;
-  padding: .3vh 2vw;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: .1vh 2vw;
   margin-bottom: 1vh;
+}
+
+#main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #game-area, #highest-number-area, #operator-select-area {
@@ -41,6 +56,7 @@ html, body {
   width: 50%;
   text-align: center;
   border: 2px solid black;
+  box-shadow: #333 .5rem .5rem;
 }
 
 #game-area {
@@ -49,13 +65,14 @@ html, body {
 }
 
 #game-area h2 {
+  font-size: 3rem;
   width: 100%;
   padding: 2vh 10vw;
   border-bottom: 2px solid black;
 }
 
 #game-area p {
-  font-size: 3vh;
+  font-size: 2.5rem;
   padding: 2.5vh 10vw;
   justify-content: center;
 }
@@ -63,6 +80,10 @@ html, body {
 #game-area #first-number, #game-area #second-number {
   border: 1px solid black;
   padding: .25vh 1vw;
+}
+
+input {
+  font-size: 1.5rem;
 }
 
 #game-area input {
@@ -82,18 +103,18 @@ html, body {
 
 #highest-number-area h3 {
   padding: 1.5vh 2vw;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
 }
 
 #highest-number {
   padding: 1.5vh;
-  margin-bottom: 2vh;
+  margin-bottom: 2rem;
   width: 10vw;
   text-align: center;
 }
 
 #operator-select-area h4 {
-  font-size: 1vw;
+  font-size: 1.3rem;
   padding: 1.3vh 0;
 }
 
@@ -113,13 +134,11 @@ html, body {
 }
 
 .selected {
-  background-color: #cecece;;
+  background-color: #cecece;
 }
 
 #footer {
   background-color: #cecece;
-  position: fixed;
-  bottom: 0;
   border-top: 2px solid black;
   text-align: center;
   width: 100%;
@@ -134,12 +153,13 @@ html, body {
 
 #score-area p {
   margin: auto;
+  font-size: 2rem;
 }
 
 /* media queries */
 @media (max-width: 1200px) {
   html, body{
-    font-size: 2.5vw;
+    font-size: .8vh;
   }
 }
 
