@@ -37,13 +37,6 @@ html, body {
   color: #333;
 }
 
-#header small {
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: .1vh 2vw;
-  margin-bottom: 1vh;
-}
-
 #main {
   flex-grow: 1;
   display: flex;

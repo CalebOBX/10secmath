@@ -58,8 +58,12 @@ let questionMaker = function() {
   }
   else if (operator === 'division' && highestNumber !== 0) {
     operatorSymbol = '/';
-    // just go to two decimals
-    question.answer = (firstNumber / secondNumber).toFixed(2);
+    // only allow evenly divisible numbers
+    while (firstNumber % secondNumber !== 0) {
+      firstNumber = pickNumber(1, highestNumber);
+      secondNumber =  pickNumber(1, highestNumber);
+    }
+    question.answer = firstNumber / secondNumber;
   }
 
   question.equation = String(firstNumber) + " " + String(operatorSymbol) + " " + String(secondNumber);
